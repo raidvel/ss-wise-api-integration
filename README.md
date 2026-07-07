@@ -1,4 +1,4 @@
-# DukeLabs
+# ss-wise-api-integration
 
 ## Project Description
 
