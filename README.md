@@ -1,18 +1,49 @@
-## Getting Started
+# DukeLabs
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Project Description
 
-## Folder Structure
+This is a slow self-study Java project focused on integrating with the Wise API.
 
-The workspace contains two folders by default, where:
+The goal of the project is to practice:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Writing code for the whole project - no AI written code.
+- Calling external REST APIs from Java using HttpClient
+- Managing configuration and API credentials safely
+- Working with Maven project structure and dependencies
+- Inspecting and formatting JSON responses for development
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Prerequisites
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+To run this project, you need:
 
-## Dependency Management
+- Java 17+
+- Maven
+- A Wise Sandbox account
+- Personal Wise API keys generated from your Sandbox account
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Without a valid Sandbox account and personal API key, requests will fail with authentication errors.
+
+## Configuration
+
+Create or update src/main/resources/config.properties with your own values:
+
+URL=https://api.wise-sandbox.com
+READ_TOKEN=your_personal_read_token
+FULL_TOKEN=your_personal_full_token
+
+Important:
+
+- Never commit real API keys to source control.
+- Keep config.properties ignored in git.
+
+## Run
+
+Build:
+
+mvn compile
+
+Run the main class:
+
+java -cp target/classes main.java.Main
+
+On success, the app prints status 200 and the JSON response from the Wise profiles endpoint.
