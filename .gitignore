@@ -1,0 +1,17 @@
+# Secrets / local config
+.env
+config.properties
+src/main/resources/config.properties
+
+# Maven build output
+target/
+!**/src/main/**/target/
+
+# VS Code workspace settings
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+
+# Java IDE/build artifacts
+*.class
+*.log
