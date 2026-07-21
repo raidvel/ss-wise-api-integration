@@ -9,8 +9,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 public final class Main {
 
-    private static final String token = Util.getToken("READ_TOKEN");
-    private static final String url = Util.getToken("URL");
+    private static final String token = Util.getToken("APP_ENV");
+    private static final String url = Util.getConfig("URL");
 
     private Main() {
     }
@@ -31,7 +31,7 @@ public final class Main {
 
         var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         String body = response.body();
-        
+
         try {
             JsonNode jsonNode = mapper.readTree(body);
             String pretty = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode);
